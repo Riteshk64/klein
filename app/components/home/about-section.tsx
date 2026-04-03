@@ -18,7 +18,7 @@ export function AboutSection() {
             affordable, and efficient transportation solutions for modern urban lifestyles.
           </p>
           <Link
-            className="mt-8 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#1E40AF]"
+            className="mt-8 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 text-sm font-semibold !text-white transition-all duration-200 hover:bg-[#1E40AF]"
             href="/about-us"
           >
             Learn More

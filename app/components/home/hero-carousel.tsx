@@ -34,9 +34,10 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
   const goToNext = () => setCurrentSlide((previous) => (previous + 1) % slides.length);
 
   return (
-    <section className="bg-white">
-      <div className="relative w-full overflow-hidden">
-        <div className="relative min-h-[75vh] lg:min-h-[90vh]">
+    <section className="bg-white py-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative min-h-[70vh]">
           {slides.map((slide, index) => (
             <div
               key={slide.model}
@@ -61,7 +62,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
               <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
 
               <div className="relative z-20">
-                <div className="mx-auto flex min-h-[75vh] max-w-7xl items-center px-5 lg:min-h-[90vh] lg:px-10">
+                <div className="flex min-h-[70vh] items-center px-5 lg:px-10">
                   <div className="max-w-2xl">
                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
                       {slide.model}
@@ -84,8 +85,8 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
             </div>
           ))}
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-8 z-30">
-            <div className="mx-auto flex max-w-7xl items-end justify-between px-5 lg:px-10">
+          <div className="pointer-events-none absolute inset-x-0 bottom-6 z-30">
+            <div className="flex items-end justify-between px-6 lg:px-6">
               <div className="pointer-events-auto flex items-center gap-3">
                 <button
                   aria-label="Previous slide"
@@ -120,6 +121,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

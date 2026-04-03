@@ -86,7 +86,8 @@ export default function Home() {
               <SectionReveal key={model.name} delay={index * 90}>
                 <ModelCard
                   description={model.description}
-                  imageHint={model.imageHint}
+                  imageAlt={model.imageAlt}
+                  imageSrc={model.imageSrc}
                   name={model.name}
                 />
               </SectionReveal>

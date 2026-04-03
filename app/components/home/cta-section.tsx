@@ -16,7 +16,7 @@ export function CTASection() {
             Book a test drive and discover the future of city mobility.
           </p>
           <Link
-            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#1E3A8A] transition-all duration-200 hover:bg-gray-100"
+            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold !text-[#1E3A8A] transition-all duration-200 hover:bg-gray-100"
             href="/book-test-drive"
           >
             Book Test Drive

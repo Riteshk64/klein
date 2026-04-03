@@ -48,17 +48,20 @@ export const lineupModels = [
   {
     name: "Klein Pulse",
     description: "Practical and affordable compact car for everyday driving.",
-    imageHint: "Add image: /public/images/home/klein-pulse-card.png",
+    imageSrc: "/images/home/klein-pulse-card.png",
+    imageAlt: "Klein Pulse compact car",
   },
   {
     name: "Klein Eon",
     description: "Modern and efficient vehicle for urban commuters.",
-    imageHint: "Add image: /public/images/home/klein-eon-card.png",
+    imageSrc: "/images/home/klein-eon-card.png",
+    imageAlt: "Klein Eon compact commuter car",
   },
   {
     name: "Klein Volt",
     description: "Fully electric city car designed for sustainable mobility.",
-    imageHint: "Add image: /public/images/home/klein-volt-card.png",
+    imageSrc: "/images/home/klein-volt-card.png",
+    imageAlt: "Klein Volt electric compact car",
   },
 ] as const;
 
