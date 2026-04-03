@@ -70,7 +70,7 @@ export const models: ModelData[] = [
         powertrain: "ICE",
         transmission: "Manual",
         specs: [
-          { label: "Engine", value: "600 cc Petrol" },
+          { label: "Engine", value: "650 cc Petrol" },
           { label: "Mileage", value: "22 km/l" },
           { label: "Transmission", value: "Manual" },
           { label: "Top Speed", value: "90 km/h" },
@@ -81,7 +81,7 @@ export const models: ModelData[] = [
         powertrain: "ICE",
         transmission: "Automatic",
         specs: [
-          { label: "Engine", value: "600 cc Petrol" },
+          { label: "Engine", value: "650 cc Petrol" },
           { label: "Mileage", value: "21 km/l" },
           { label: "Transmission", value: "Automatic" },
           { label: "Top Speed", value: "90 km/h" },
@@ -93,7 +93,7 @@ export const models: ModelData[] = [
         specs: [
           { label: "Powertrain", value: "Electric" },
           { label: "Battery", value: "10 kWh" },
-          { label: "Range", value: "120 km" },
+          { label: "Range", value: "110 km" },
           { label: "Charging Time", value: "3.5 hours" },
           { label: "Top Speed", value: "85 km/h" },
           { label: "Turning Radius", value: "4.0 m" },
@@ -139,7 +139,7 @@ export const models: ModelData[] = [
         powertrain: "ICE",
         transmission: "Manual",
         specs: [
-          { label: "Engine", value: "650 cc Petrol" },
+          { label: "Engine", value: "798 cc Petrol" },
           { label: "Mileage", value: "24 km/l" },
           { label: "Transmission", value: "Manual" },
           { label: "Top Speed", value: "95 km/h" },
@@ -150,7 +150,7 @@ export const models: ModelData[] = [
         powertrain: "ICE",
         transmission: "Automatic",
         specs: [
-          { label: "Engine", value: "650 cc Petrol" },
+          { label: "Engine", value: "798 cc Petrol" },
           { label: "Mileage", value: "23 km/l" },
           { label: "Transmission", value: "Automatic" },
           { label: "Top Speed", value: "95 km/h" },
