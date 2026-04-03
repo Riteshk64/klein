@@ -4,21 +4,24 @@ export const heroSlides = [
     heading: "Smart Cars for Smarter Cities",
     description:
       "Ultra-compact vehicles designed for urban mobility, affordability, and efficiency.",
-    imageHint: "Add image: /public/images/home/klein-pulse-hero.png",
+    imageSrc: "/images/home/klein-pulse-hero.png",
+    imageAlt: "Klein Pulse ultra-compact city car",
   },
   {
     model: "Klein Eon",
     heading: "Modern Mobility, Built Around the Urban Commute",
     description:
       "A practical city-first vehicle engineered to move through dense streets with confidence.",
-    imageHint: "Add image: /public/images/home/klein-eon-hero.png",
+    imageSrc: "/images/home/klein-eon-hero.png",
+    imageAlt: "Klein Eon compact urban mobility car",
   },
   {
     model: "Klein Volt",
     heading: "Compact Electric Driving for Everyday City Life",
     description:
       "A sustainable ultra-compact car designed to reduce friction, cost, and emissions in daily travel.",
-    imageHint: "Add image: /public/images/home/klein-volt-hero.png",
+    imageSrc: "/images/home/klein-volt-hero.png",
+    imageAlt: "Klein Volt electric city car",
   },
 ] as const;
 

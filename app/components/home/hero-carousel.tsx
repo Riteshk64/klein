@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "./icons";
@@ -8,7 +9,8 @@ type HeroSlide = {
   model: string;
   heading: string;
   description: string;
-  imageHint: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 type HeroCarouselProps = {
@@ -34,7 +36,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
   return (
     <section className="bg-white">
       <div className="relative overflow-hidden border-b border-gray-100">
-        <div className="relative min-h-[70vh] lg:min-h-[90vh]">
+        <div className="relative min-h-[80vh]">
           {slides.map((slide, index) => (
             <div
               key={slide.model}
@@ -45,7 +47,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
                   : "pointer-events-none translate-x-6 opacity-0"
               }`}
             >
-              <div className="mx-auto grid h-full max-w-[1280px] items-center gap-12 px-6 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(420px,560px)] lg:px-10 lg:py-20">
+              <div className="mx-auto grid min-h-[80vh] max-w-7xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:px-10 lg:py-20">
                 <div className="max-w-2xl">
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#1E3A8A]">
                     {slide.model}
@@ -64,12 +66,16 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
                   </Link>
                 </div>
 
-                <div className="flex aspect-[5/4] w-full items-end rounded-[32px] bg-gradient-to-br from-slate-100 via-white to-blue-50 p-8 shadow-[0_24px_80px_rgba(17,17,17,0.08)]">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1E3A8A]">
-                      Car Image Placeholder
-                    </p>
-                    <p className="mt-3 text-sm font-medium text-[#555555]">{slide.imageHint}</p>
+                <div className="w-full lg:translate-x-6">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-transparent shadow-lg">
+                    <Image
+                      alt={slide.imageAlt}
+                      className="object-contain"
+                      fill
+                      priority={index === 0}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      src={slide.imageSrc}
+                    />
                   </div>
                 </div>
               </div>
@@ -77,7 +83,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
           ))}
 
           <div className="pointer-events-none absolute inset-x-0 bottom-8 z-20">
-            <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 lg:px-10">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
               <div className="pointer-events-auto flex items-center gap-3">
                 <button
                   aria-label="Previous slide"
