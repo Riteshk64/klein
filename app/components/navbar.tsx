@@ -111,7 +111,7 @@ export function Navbar() {
             ))}
 
             <Link
-              className="mt-2 inline-flex items-center justify-center rounded-lg bg-[#1E3A8A] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#1E40AF]"
+              className="mt-2 inline-flex items-center justify-center rounded-lg bg-[#1E3A8A] px-6 py-3 text-sm font-semibold !text-white transition-all duration-200 hover:bg-[#1E40AF]"
               href={bookDriveItem.href}
               onClick={() => setIsOpen(false)}
             >
