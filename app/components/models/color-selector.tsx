@@ -12,7 +12,7 @@ export function ColorSelector({
   onSelect,
 }: ColorSelectorProps) {
   return (
-    <div className="mt-8">
+    <div className="mt-4">
       <p className="mb-3 text-sm font-medium text-gray-700">Available Colors</p>
       <div className="flex gap-4">
         {colors.map((color) => {
