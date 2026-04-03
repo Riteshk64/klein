@@ -25,7 +25,11 @@ export default function TechnologyPage() {
             </p>
           </div>
 
-          <ImagePlaceholder label="Add image: /images/technology/technology-hero.png" />
+          <ImagePlaceholder
+            alt="Klein Motors technology hero visual"
+            label="Add image: /images/technology/technology-hero.png"
+            src="/images/technology/technology-hero.png"
+          />
         </div>
       </SectionContainer>
 
@@ -67,7 +71,11 @@ export default function TechnologyPage() {
             </ul>
           </div>
 
-          <ImagePlaceholder label="Add image: /images/technology/ice-engine.png" />
+          <ImagePlaceholder
+            alt="Klein Motors petrol engine technology visual"
+            label="Add image: /images/technology/ice-engine.png"
+            src="/images/technology/ice-engine.png"
+          />
         </div>
       </SectionContainer>
 
@@ -90,8 +98,10 @@ export default function TechnologyPage() {
           </div>
 
           <ImagePlaceholder
+            alt="Klein Motors electric powertrain visual"
             className="lg:order-1"
             label="Add image: /images/technology/electric-powertrain.png"
+            src="/images/technology/electric-powertrain.png"
           />
         </div>
       </SectionContainer>
@@ -101,8 +111,10 @@ export default function TechnologyPage() {
           <h2 className="text-3xl font-bold text-gray-900">Safety Systems</h2>
           <FeatureGrid features={safetyFeatures} />
           <ImagePlaceholder
+            alt="Klein Motors safety systems visual"
             className="mt-12"
             label="Add image: /images/technology/safety-systems.png"
+            src="/images/technology/safety-systems.png"
           />
         </div>
       </SectionContainer>
@@ -122,7 +134,11 @@ export default function TechnologyPage() {
             </ul>
           </div>
 
-          <ImagePlaceholder label="Add image: /images/technology/dashboard-system.png" />
+          <ImagePlaceholder
+            alt="Klein Motors dashboard system visual"
+            label="Add image: /images/technology/dashboard-system.png"
+            src="/images/technology/dashboard-system.png"
+          />
         </div>
       </SectionContainer>
 
@@ -141,8 +157,10 @@ export default function TechnologyPage() {
           </div>
 
           <ImagePlaceholder
+            alt="Klein Motors efficiency and design visual"
             className="lg:order-1"
             label="Add image: /images/technology/efficiency-design.png"
+            src="/images/technology/efficiency-design.png"
           />
         </div>
       </SectionContainer>
@@ -158,8 +176,10 @@ export default function TechnologyPage() {
             transportation.
           </p>
           <ImagePlaceholder
+            alt="Klein Motors future technology visual"
             className="mt-12"
             label="Add image: /images/technology/future-technology.png"
+            src="/images/technology/future-technology.png"
           />
         </div>
       </SectionContainer>
