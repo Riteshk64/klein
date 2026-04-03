@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     template: "%s | Klein Motors",
   },
   description: "Urban mobility startup building ultra-compact city cars.",
+  icons: {
+    icon: "/images/brand/klien-logo.png",
+    shortcut: "/images/brand/klien-logo.png",
+    apple: "/images/brand/klien-logo.png",
+  },
 };
 
 export default function RootLayout({

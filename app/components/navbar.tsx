@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -50,11 +51,19 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-6 lg:px-10">
         <Link
-          className="text-lg font-bold tracking-tight text-[#111111] transition-colors hover:text-[#1E3A8A]"
+          className="inline-flex items-center gap-3 text-lg font-bold tracking-tight text-[#111111] transition-colors hover:text-[#1E3A8A]"
           href="/"
           onClick={() => setIsOpen(false)}
         >
-          Klein Motors
+          <Image
+            alt="Klein Motors logo"
+            className="h-10 w-auto object-contain"
+            height={40}
+            priority
+            src="/images/brand/klien-logo.png"
+            width={40}
+          />
+          <span>Klein Motors</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
