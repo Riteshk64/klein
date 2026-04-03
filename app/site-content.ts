@@ -12,10 +12,10 @@ export type PageContent = {
 
 export const navItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/product-models", label: "Product / Models" },
+  { href: "/product-models", label: "Models" },
   { href: "/technology", label: "Technology" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/about-us", label: "About Us" },
+  { href: "/about-us", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
