@@ -45,7 +45,7 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
               {activeModel.description}
             </p>
             <Link
-              className="mt-8 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+              className="mt-8 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold !text-white transition hover:bg-blue-700"
               href="/build-and-pricing"
             >
               Build & Price
@@ -61,7 +61,7 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
         <div className="rounded-3xl bg-gray-50 px-8 py-12 text-center">
           <h3 className="text-3xl font-bold text-gray-900">Ready to experience Klein?</h3>
           <Link
-            className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+            className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold !text-white transition hover:bg-blue-700"
             href="/build-and-pricing"
           >
             Build & Price
