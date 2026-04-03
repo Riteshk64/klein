@@ -28,9 +28,10 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
 
       <section className="min-h-[65vh] py-8">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
-          <div className="flex w-full aspect-[16/9] items-center justify-center">
+          <div className="aspect-[16/9] overflow-hidden rounded-2xl">
             <ShowcaseImage
               alt={activeModel.heroImage.alt}
+              fit="cover"
               src={activeModel.heroImage.src}
             />
           </div>

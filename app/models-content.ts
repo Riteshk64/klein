@@ -32,7 +32,7 @@ export const models: ShowcaseModel[] = [
     description:
       "An affordable ultra-compact vehicle designed to make daily urban travel simple, efficient, and stress-free.",
     heroImage: {
-      src: "/images/models/pulse-hero.png",
+      src: "/images/models/klein-pulse-hero.png",
       alt: "Klein Pulse hero vehicle shot",
     },
     highlights: [
@@ -83,7 +83,7 @@ export const models: ShowcaseModel[] = [
     description:
       "A more refined urban vehicle that balances comfort, everyday practicality, and a more premium city-driving experience.",
     heroImage: {
-      src: "/images/models/eon-hero.png",
+      src: "/images/models/klein-eon-hero.png",
       alt: "Klein Eon hero vehicle shot",
     },
     highlights: [
@@ -134,7 +134,7 @@ export const models: ShowcaseModel[] = [
     description:
       "A future-focused electric city car built for clean mobility, quiet performance, and low-maintenance ownership.",
     heroImage: {
-      src: "/images/models/volt-hero.png",
+      src: "/images/models/klein-volt-hero.png",
       alt: "Klein Volt hero vehicle shot",
     },
     highlights: [
