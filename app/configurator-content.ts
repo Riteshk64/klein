@@ -54,7 +54,7 @@ export const configuratorModels: ConfigModel[] = [
       {
         id: "ICE",
         label: "ICE",
-        basePrice: 450000,
+        basePrice: 400000,
         engineOptions: [
           {
             id: "600cc",
@@ -73,7 +73,7 @@ export const configuratorModels: ConfigModel[] = [
       {
         id: "EV",
         label: "EV",
-        basePrice: 580000,
+        basePrice: 455000,
         batteryOptions: [
           {
             id: "standard-battery",
@@ -152,7 +152,7 @@ export const configuratorModels: ConfigModel[] = [
       {
         id: "EV",
         label: "EV",
-        basePrice: 640000,
+        basePrice: 590000,
         batteryOptions: [
           {
             id: "standard-battery",
@@ -212,7 +212,7 @@ export const configuratorModels: ConfigModel[] = [
       {
         id: "EV",
         label: "Electric",
-        basePrice: 720000,
+        basePrice: 500000,
         batteryOptions: [
           {
             id: "standard-battery",
