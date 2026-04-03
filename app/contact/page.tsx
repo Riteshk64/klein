@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "../components/contact/contact-form";
 import { ContactInfoCard } from "../components/contact/contact-info-card";
-import { MapPlaceholder } from "../components/contact/map-placeholder";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -23,10 +22,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <ContactForm />
 
-            <div>
-              <ContactInfoCard />
-              <MapPlaceholder />
-            </div>
+            <ContactInfoCard />
           </div>
         </div>
       </section>

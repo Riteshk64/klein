@@ -71,28 +71,6 @@ export default function AboutUsPage() {
       </SectionContainer>
 
       <SectionContainer>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900">
-              Company Overview
-            </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600">
-              Klein Motors was established to address the growing challenges of
-              urban transportation. With increasing congestion, limited
-              parking, and rising costs, our vehicles are designed to offer a
-              smarter solution for everyday city mobility.
-            </p>
-          </div>
-
-          <ImagePlaceholder
-            alt="Klein Motors company team placeholder"
-            label="Add image: /images/about/company-team.png"
-            src="/images/about/company-team.png"
-          />
-        </div>
-      </SectionContainer>
-
-      <SectionContainer>
         <div>
           <h2 className="text-3xl font-bold text-gray-900">
             Why Choose Klein Motors
@@ -113,7 +91,7 @@ export default function AboutUsPage() {
             Join the Future of Urban Mobility
           </h2>
           <Link
-            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold text-blue-600 transition hover:bg-gray-100"
+            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold !text-blue-600 transition hover:bg-gray-100"
             href="/build-and-pricing"
           >
             Build &amp; Price
