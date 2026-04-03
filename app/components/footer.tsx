@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h2 className="text-xl font-bold">Klein Motors</h2>
             <p className="mt-3 max-w-xs text-sm font-medium leading-7 text-white/70">
-              Urban Mobility Redefined
+              Unapologetically Abnormal
             </p>
           </div>
 

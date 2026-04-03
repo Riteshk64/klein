@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SectionReveal } from "./section-reveal";
 
@@ -26,15 +27,14 @@ export function AboutSection() {
         </SectionReveal>
 
         <SectionReveal delay={120}>
-          <div className="flex aspect-[4/3] items-end rounded-[28px] bg-gradient-to-br from-slate-100 via-white to-blue-50 p-8 shadow-lg">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1E3A8A]">
-                Image Placeholder
-              </p>
-              <p className="mt-3 text-sm font-medium text-[#555555]">
-                Add your image in <span className="font-semibold">/public/images/home/about-klein-motors.png</span>
-              </p>
-            </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-white shadow-lg">
+            <Image
+              alt="Klein Motors team or company visual"
+              className="object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              src="/images/home/about-klein-motors.png"
+            />
           </div>
         </SectionReveal>
       </div>
