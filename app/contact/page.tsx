@@ -1,11 +1,35 @@
 import type { Metadata } from "next";
-import { PageScaffold } from "../components/page-scaffold";
-import { pageContent } from "../site-content";
+import { ContactForm } from "../components/contact/contact-form";
+import { ContactInfoCard } from "../components/contact/contact-info-card";
+import { MapPlaceholder } from "../components/contact/map-placeholder";
 
 export const metadata: Metadata = {
   title: "Contact",
 };
 
 export default function ContactPage() {
-  return <PageScaffold content={pageContent.contact} />;
+  return (
+    <main className="bg-white">
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <header className="mb-12">
+            <h1 className="text-4xl font-bold text-gray-900">Contact Us</h1>
+            <p className="mt-4 text-lg text-gray-600">
+              We are here to help. Reach out to us for inquiries, support, or
+              information about our vehicles.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <ContactForm />
+
+            <div>
+              <ContactInfoCard />
+              <MapPlaceholder />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

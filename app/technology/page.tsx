@@ -190,7 +190,7 @@ export default function TechnologyPage() {
             Experience Technology Built for the City
           </h2>
           <Link
-            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold text-blue-600 transition hover:bg-gray-100"
+            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold !text-blue-600 transition hover:bg-gray-100"
             href="/build-and-pricing"
           >
             Build &amp; Price
