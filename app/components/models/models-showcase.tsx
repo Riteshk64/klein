@@ -2,8 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { ModelData } from "../../models-content";
+import type {
+  ModelData,
+  ModelPowertrain,
+  ModelTransmission,
+} from "../../models-content";
 import { ColorSelector } from "./color-selector";
+import { ConfigToggle } from "./config-toggle";
 import { VehicleImage } from "./vehicle-image";
 import { VehicleSpecs } from "./vehicle-specs";
 import { VehicleTabs } from "./vehicle-tabs";
@@ -17,6 +22,22 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
   const [selectedColors, setSelectedColors] = useState<Record<string, string>>(
     Object.fromEntries(models.map((model) => [model.id, model.colors[0].id])),
   );
+  const [selectedPowertrains, setSelectedPowertrains] = useState<
+    Record<string, ModelPowertrain>
+  >(
+    Object.fromEntries(
+      models.map((model) => [model.id, model.id === "volt" ? "Electric" : "ICE"]),
+    ) as Record<string, ModelPowertrain>,
+  );
+  const [selectedTransmissions, setSelectedTransmissions] = useState<
+    Record<string, ModelTransmission>
+  >(
+    Object.fromEntries(
+      models
+        .filter((model) => model.id !== "volt")
+        .map((model) => [model.id, "Manual"]),
+    ) as Record<string, ModelTransmission>,
+  );
 
   const activeModel =
     models.find((model) => model.id === activeVehicleId) ?? models[0];
@@ -24,6 +45,24 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
   const activeColor =
     activeModel.colors.find((color) => color.id === activeColorId) ??
     activeModel.colors[0];
+  const activePowertrain =
+    selectedPowertrains[activeModel.id] ?? (activeModel.id === "volt" ? "Electric" : "ICE");
+  const activeTransmission =
+    selectedTransmissions[activeModel.id] ?? "Manual";
+  const activeVariant =
+    activeModel.variants.find((variant) => {
+      if (variant.powertrain !== activePowertrain) {
+        return false;
+      }
+
+      if (activePowertrain === "ICE") {
+        return variant.transmission === activeTransmission;
+      }
+
+      return true;
+    }) ?? activeModel.variants[0];
+  const showPowertrainSelector = activeModel.id !== "volt";
+  const showTransmissionSelector = activePowertrain === "ICE" && activeModel.id !== "volt";
 
   return (
     <>
@@ -53,7 +92,43 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
             selectedColorId={activeColor.id}
           />
 
-          <VehicleSpecs specs={activeModel.specs} />
+          {showPowertrainSelector ? (
+            <ConfigToggle
+              className="mt-6"
+              label="Powertrain"
+              onSelect={(powertrainId) =>
+                setSelectedPowertrains((current) => ({
+                  ...current,
+                  [activeModel.id]: powertrainId as ModelPowertrain,
+                }))
+              }
+              options={[
+                { id: "ICE", label: "ICE" },
+                { id: "EV", label: "EV" },
+              ]}
+              selectedId={activePowertrain}
+            />
+          ) : null}
+
+          {showTransmissionSelector ? (
+            <ConfigToggle
+              className="mt-4"
+              label="Transmission"
+              onSelect={(transmissionId) =>
+                setSelectedTransmissions((current) => ({
+                  ...current,
+                  [activeModel.id]: transmissionId as ModelTransmission,
+                }))
+              }
+              options={[
+                { id: "Manual", label: "Manual" },
+                { id: "Automatic", label: "Automatic" },
+              ]}
+              selectedId={activeTransmission}
+            />
+          ) : null}
+
+          <VehicleSpecs specs={activeVariant.specs} />
 
           <Link
             className="mt-10 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"

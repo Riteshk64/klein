@@ -13,12 +13,21 @@ export type ModelSpec = {
   value: string;
 };
 
+export type ModelPowertrain = "ICE" | "EV" | "Electric";
+export type ModelTransmission = "Manual" | "Automatic";
+
+export type ModelVariant = {
+  powertrain: ModelPowertrain;
+  transmission?: ModelTransmission;
+  specs: ModelSpec[];
+};
+
 export type ModelData = {
   id: string;
   name: string;
   description: string;
   colors: ModelColor[];
-  specs: ModelSpec[];
+  variants: ModelVariant[];
 };
 
 export const models: ModelData[] = [
@@ -56,19 +65,40 @@ export const models: ModelData[] = [
         imageScale: 1,
       },
     ],
-    specs: [
-      { label: "Engine", value: "600 cc Petrol" },
-      { label: "Transmission", value: "Manual" },
-      { label: "Mileage", value: "22 km/l" },
-      { label: "Fuel Tank", value: "25 liters" },
-      { label: "Seating Capacity", value: "2 persons" },
-      { label: "Turning Radius", value: "4.2 m" },
-      { label: "Boot Space", value: "120 liters" },
-      { label: "Ground Clearance", value: "170 mm" },
-      { label: "Top Speed", value: "90 km/h" },
-      { label: "Length", value: "3,200 mm" },
-      { label: "Width", value: "1,480 mm" },
-      { label: "Height", value: "1,600 mm" },
+    variants: [
+      {
+        powertrain: "ICE",
+        transmission: "Manual",
+        specs: [
+          { label: "Engine", value: "600 cc Petrol" },
+          { label: "Mileage", value: "22 km/l" },
+          { label: "Transmission", value: "Manual" },
+          { label: "Top Speed", value: "90 km/h" },
+          { label: "Turning Radius", value: "4.2 m" },
+        ],
+      },
+      {
+        powertrain: "ICE",
+        transmission: "Automatic",
+        specs: [
+          { label: "Engine", value: "600 cc Petrol" },
+          { label: "Mileage", value: "21 km/l" },
+          { label: "Transmission", value: "Automatic" },
+          { label: "Top Speed", value: "90 km/h" },
+          { label: "Turning Radius", value: "4.2 m" },
+        ],
+      },
+      {
+        powertrain: "EV",
+        specs: [
+          { label: "Powertrain", value: "Electric" },
+          { label: "Battery", value: "10 kWh" },
+          { label: "Range", value: "120 km" },
+          { label: "Charging Time", value: "3.5 hours" },
+          { label: "Top Speed", value: "85 km/h" },
+          { label: "Turning Radius", value: "4.0 m" },
+        ],
+      },
     ],
   },
   {
@@ -104,19 +134,40 @@ export const models: ModelData[] = [
         imageScale: 1,
       },
     ],
-    specs: [
-      { label: "Engine", value: "650 cc Petrol" },
-      { label: "Transmission", value: "Manual" },
-      { label: "Mileage", value: "24 km/l" },
-      { label: "Fuel Tank", value: "27 liters" },
-      { label: "Seating Capacity", value: "4 persons" },
-      { label: "Turning Radius", value: "4.1 m" },
-      { label: "Boot Space", value: "160 liters" },
-      { label: "Ground Clearance", value: "175 mm" },
-      { label: "Top Speed", value: "95 km/h" },
-      { label: "Length", value: "3,350 mm" },
-      { label: "Width", value: "1,520 mm" },
-      { label: "Height", value: "1,620 mm" },
+    variants: [
+      {
+        powertrain: "ICE",
+        transmission: "Manual",
+        specs: [
+          { label: "Engine", value: "650 cc Petrol" },
+          { label: "Mileage", value: "24 km/l" },
+          { label: "Transmission", value: "Manual" },
+          { label: "Top Speed", value: "95 km/h" },
+          { label: "Turning Radius", value: "4.1 m" },
+        ],
+      },
+      {
+        powertrain: "ICE",
+        transmission: "Automatic",
+        specs: [
+          { label: "Engine", value: "650 cc Petrol" },
+          { label: "Mileage", value: "23 km/l" },
+          { label: "Transmission", value: "Automatic" },
+          { label: "Top Speed", value: "95 km/h" },
+          { label: "Turning Radius", value: "4.1 m" },
+        ],
+      },
+      {
+        powertrain: "EV",
+        specs: [
+          { label: "Powertrain", value: "Electric" },
+          { label: "Battery", value: "12 kWh" },
+          { label: "Range", value: "130 km" },
+          { label: "Charging Time", value: "3.5 hours" },
+          { label: "Top Speed", value: "90 km/h" },
+          { label: "Turning Radius", value: "4.0 m" },
+        ],
+      },
     ],
   },
   {
@@ -152,17 +203,18 @@ export const models: ModelData[] = [
         imageScale: 1,
       },
     ],
-    specs: [
-      { label: "Powertrain", value: "Electric" },
-      { label: "Battery", value: "12 kWh Lithium-ion" },
-      { label: "Range", value: "135 km" },
-      { label: "Charging Time", value: "3.5 hours" },
-      { label: "Seating Capacity", value: "4 persons" },
-      { label: "Turning Radius", value: "3.8 m" },
-      { label: "Boot Space", value: "150 liters" },
-      { label: "Ground Clearance", value: "170 mm" },
-      { label: "Top Speed", value: "85 km/h" },
-      { label: "Motor Power", value: "18 kW" },
+    variants: [
+      {
+        powertrain: "Electric",
+        specs: [
+          { label: "Powertrain", value: "Electric" },
+          { label: "Battery", value: "12 kWh" },
+          { label: "Range", value: "135 km" },
+          { label: "Charging Time", value: "3.5 hours" },
+          { label: "Top Speed", value: "85 km/h" },
+          { label: "Turning Radius", value: "3.8 m" },
+        ],
+      },
     ],
   },
 ];
