@@ -12,7 +12,7 @@ export function VehicleImage({ imageSrc, imageAlt }: VehicleImageProps) {
   const [hasError, setHasError] = useState(false);
 
   return (
-    <div className="flex w-full aspect-[16/9] items-center justify-center rounded-xl bg-gray-50">
+    <div className="image-frame flex w-full aspect-[16/9] items-center justify-center rounded-[24px]">
       <div className="relative h-full w-full">
         {hasError ? (
           <div className="flex h-full w-full items-center justify-center px-6 text-center">

@@ -60,8 +60,8 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
       <HighlightsGrid highlights={activeModel.highlights} />
       <FeaturesShowcase features={activeModel.features} />
 
-      <section className="bg-[#1E3A8A] py-20 text-white">
-        <div className="mx-auto max-w-[900px] px-6 text-center lg:px-10">
+      <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#1E3A8A] py-20 text-white">
+        <div className="mx-auto max-w-7xl px-6 text-center lg:px-10">
           <SectionReveal>
             <h3 className="text-3xl font-bold text-white">Ready to experience Klein?</h3>
             <Link

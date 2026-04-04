@@ -48,7 +48,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 shadow-sm backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-6 lg:px-10">
         <Link
           className="inline-flex items-center gap-3 text-lg font-bold tracking-tight text-[#111111] transition-colors hover:text-[#1E3A8A]"
@@ -74,8 +74,10 @@ export function Navbar() {
             return (
               <Link
                 key={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive ? "text-[#111111]" : "text-[#555555] hover:text-[#111111]"
+                className={`inline-flex rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                  isActive
+                    ? "bg-[#1E3A8A]/8 text-[#1E3A8A] shadow-sm"
+                    : "text-[#555555] hover:bg-black/3 hover:text-[#111111]"
                 }`}
                 href={item.href}
               >
@@ -87,7 +89,7 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Link
-            className="inline-flex items-center rounded-lg bg-[#1E3A8A] bg-[#1E3A8A] px-6 py-3 text-sm font-semibold !text-white transition-all duration-200 hover:bg-[#1E40AF]"
+            className="inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 text-sm font-semibold !text-white shadow-[0_18px_34px_-22px_rgba(30,58,138,0.95)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1E40AF]"
             href={bookDriveItem.href}
           >
             {bookDriveItem.label}
@@ -106,12 +108,12 @@ export function Navbar() {
       </div>
 
       {isOpen ? (
-        <div className="border-t border-gray-200 bg-white md:hidden">
+        <div className="border-t border-black/5 bg-white/95 backdrop-blur-xl md:hidden">
           <div className="mx-auto flex max-w-[1280px] flex-col gap-2 px-6 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                className="rounded-lg px-3 py-3 text-sm font-medium text-[#111111] transition-colors hover:bg-gray-50"
+                className="rounded-xl px-3 py-3 text-sm font-medium text-[#111111] transition-colors hover:bg-[#1E3A8A]/6"
                 href={item.href}
                 onClick={() => setIsOpen(false)}
               >

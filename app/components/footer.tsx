@@ -3,8 +3,11 @@ import { navItems } from "../site-content";
 
 export function Footer() {
   return (
-    <footer className="bg-[#111111] text-white">
-      <div className="mx-auto max-w-[1280px] px-6 py-16 lg:px-10">
+    <footer className="relative overflow-hidden bg-[#111111] text-white">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute -left-16 top-0 h-48 w-48 rounded-full bg-[#1E3A8A]/20 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-[#1E3A8A]/10 blur-3xl" />
+      <div className="relative mx-auto max-w-[1280px] px-6 py-16 lg:px-10">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <h2 className="text-xl font-bold">Klein Motors</h2>
@@ -19,7 +22,11 @@ export function Footer() {
             </h3>
             <nav aria-label="Footer" className="mt-4 flex flex-col gap-3 text-sm font-medium">
               {navItems.map((item) => (
-                <Link key={item.href} className="text-white/80 transition-colors hover:text-white" href={item.href}>
+                <Link
+                  key={item.href}
+                  className="text-white/80 transition-colors hover:text-white"
+                  href={item.href}
+                >
                   {item.label}
                 </Link>
               ))}

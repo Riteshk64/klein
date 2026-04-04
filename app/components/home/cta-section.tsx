@@ -3,10 +3,12 @@ import { SectionReveal } from "../section-reveal";
 
 export function CTASection() {
   return (
-    <section className="bg-[#1E3A8A] py-20 text-white">
-      <div className="mx-auto max-w-[900px] px-6 text-center lg:px-10">
+    <section className="relative overflow-hidden bg-[#1E3A8A] py-20 text-white">
+      <div className="absolute -left-16 top-0 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-black/10 blur-3xl" />
+      <div className="relative mx-auto max-w-[900px] px-6 text-center lg:px-10">
         <SectionReveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">
+          <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-white/70 backdrop-blur-sm">
             Book a Drive
           </p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">

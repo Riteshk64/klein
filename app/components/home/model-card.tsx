@@ -10,8 +10,9 @@ type ModelCardProps = {
 
 export function ModelCard({ name, description, imageSrc, imageAlt }: ModelCardProps) {
   return (
-    <article className="group rounded-xl border border-gray-200 bg-white p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015]">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-white shadow-sm">
+    <article className="surface-card surface-card-hover group relative overflow-hidden rounded-[26px] p-5">
+      <div className="absolute inset-x-6 top-0 h-24 rounded-b-[28px] bg-[#1E3A8A]/6 blur-2xl" />
+      <div className="image-frame relative aspect-[4/3] overflow-hidden rounded-[22px]">
         <Image
           alt={imageAlt}
           className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"

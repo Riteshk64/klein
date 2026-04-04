@@ -4,12 +4,10 @@ import { SectionReveal } from "../section-reveal";
 
 export function AboutSection() {
   return (
-    <section className="bg-[#F9FAFB] py-20">
+    <section className="section-ambient bg-[#F9FAFB] py-20">
       <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-6 lg:grid-cols-2 lg:px-10">
         <SectionReveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#1E3A8A]">
-            About Klein Motors
-          </p>
+          <p className="eyebrow-chip">About Klein Motors</p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#111111] md:text-5xl">
             Designed around the realities of modern city life.
           </h2>
@@ -27,7 +25,7 @@ export function AboutSection() {
         </SectionReveal>
 
         <SectionReveal delay={120}>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-white shadow-lg">
+          <div className="image-frame relative aspect-[4/3] overflow-hidden rounded-[28px]">
             <Image
               alt="Klein Motors team or company visual"
               className="object-cover"

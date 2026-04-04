@@ -11,7 +11,7 @@ export function SectionContainer({
   className = "",
 }: SectionContainerProps) {
   return (
-    <section className={`py-20 ${className}`}>
+    <section className={`section-ambient py-20 ${className}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionReveal>{children}</SectionReveal>
       </div>

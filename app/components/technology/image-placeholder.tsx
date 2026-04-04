@@ -21,7 +21,7 @@ export function ImagePlaceholder({
   if (hasError) {
     return (
       <div
-        className={`flex w-full aspect-[16/9] items-center justify-center rounded-xl border-2 border-dashed border-gray-300 text-center text-gray-500 ${className}`}
+        className={`image-frame flex w-full aspect-[16/9] items-center justify-center rounded-[24px] border-2 border-dashed border-gray-300 text-center text-gray-500 ${className}`}
       >
         <p className="px-6 text-sm font-medium leading-6">{label}</p>
       </div>
@@ -29,7 +29,7 @@ export function ImagePlaceholder({
   }
 
   return (
-    <div className={`relative w-full aspect-[16/9] overflow-hidden rounded-xl bg-gray-100 ${className}`}>
+    <div className={`image-frame relative w-full aspect-[16/9] overflow-hidden rounded-[24px] ${className}`}>
       <Image
         alt={alt}
         className="object-cover"

@@ -36,7 +36,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
   return (
     <section className="bg-white py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-lg">
+        <div className="hero-shell relative w-full overflow-hidden rounded-[32px]">
           <div className="relative min-h-[70vh]">
           {slides.map((slide, index) => (
             <div
@@ -60,11 +60,12 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
               </div>
 
               <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+              <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_28%)]" />
 
               <div className="relative z-20">
                 <div className="flex min-h-[70vh] items-center px-5 lg:px-10">
                   <div className="max-w-2xl">
-                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
+                    <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white/80 backdrop-blur-sm">
                       {slide.model}
                     </p>
                     <h1 className="mt-5 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
@@ -74,7 +75,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
                       {slide.description}
                     </p>
                     <Link
-                      className="mt-6 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white transition hover:bg-[#1E40AF]"
+                      className="mt-6 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white shadow-[0_18px_34px_-22px_rgba(30,58,138,0.95)] transition hover:-translate-y-0.5 hover:bg-[#1E40AF]"
                       href="/product-models"
                     >
                       Explore Models
@@ -120,6 +121,10 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="pointer-events-none absolute right-6 top-6 z-30 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
+            {String(currentSlide + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
           </div>
         </div>
         </div>

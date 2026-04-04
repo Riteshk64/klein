@@ -41,9 +41,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <SectionReveal>
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#1E3A8A]">
-                Built for the City
-              </p>
+              <p className="eyebrow-chip">Built for the City</p>
               <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#111111] md:text-5xl">
                 Compact mobility designed around real urban needs.
               </h2>
@@ -72,9 +70,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <SectionReveal>
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#1E3A8A]">
-                Meet the Klein Lineup
-              </p>
+              <p className="eyebrow-chip">Meet the Klein Lineup</p>
               <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#111111] md:text-5xl">
                 Three ultra-compact models for three different city-driving mindsets.
               </h2>
