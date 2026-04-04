@@ -29,19 +29,13 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
 
       <SectionReveal>
         <section className="min-h-[50vh] py-8">
-          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
-            <div className="aspect-[16/9] overflow-hidden rounded-2xl">
-              <ShowcaseImage
-                alt={activeModel.heroImage.alt}
-                fit="cover"
-                src={activeModel.heroImage.src}
-              />
+          <div className="page-intro-panel grid grid-cols-1 items-center gap-14 p-8 sm:p-10 lg:grid-cols-[1.15fr_0.85fr] lg:p-12">
+            <div className="image-frame aspect-[16/9] overflow-hidden rounded-[28px]">
+              <ShowcaseImage alt={activeModel.heroImage.alt} fit="cover" src={activeModel.heroImage.src} />
             </div>
 
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1E3A8A]">
-                {activeModel.name}
-              </p>
+              <p className="eyebrow-chip">{activeModel.name}</p>
               <h2 className="mt-4 text-4xl font-bold text-gray-900">{activeModel.tagline}</h2>
               <p className="mt-5 max-w-xl text-lg leading-8 text-gray-600">
                 {activeModel.description}

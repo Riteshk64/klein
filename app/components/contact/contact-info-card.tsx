@@ -1,6 +1,6 @@
 export function ContactInfoCard() {
   return (
-    <div className="rounded-2xl bg-gray-50 p-8 shadow-sm">
+    <div className="surface-card rounded-[28px] p-8 sm:p-10">
       <h2 className="text-2xl font-bold text-gray-900">Get in Touch</h2>
 
       <div className="mt-6 space-y-6 text-gray-600">

@@ -14,9 +14,10 @@ export default function AboutUsPage() {
   return (
     <main className="bg-white">
       <SectionContainer>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        <div className="page-intro-panel grid grid-cols-1 items-center gap-12 p-8 sm:p-10 lg:grid-cols-2 lg:p-12">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 lg:text-5xl">
+            <p className="eyebrow-chip">Company Story</p>
+            <h1 className="mt-5 text-4xl font-bold text-gray-900 lg:text-5xl">
               About Klein Motors
             </h1>
             <p className="mt-4 max-w-xl text-lg text-gray-600">
@@ -78,7 +79,7 @@ export default function AboutUsPage() {
           </h2>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
             {whyChooseKlein.map((point) => (
-              <div key={point} className="rounded-xl bg-gray-50 p-6 shadow-sm">
+              <div key={point} className="surface-card surface-card-hover rounded-[24px] p-6">
                 <p className="font-medium text-gray-900">{point}</p>
               </div>
             ))}

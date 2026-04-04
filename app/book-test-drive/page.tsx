@@ -19,10 +19,8 @@ export default function BookTestDrivePage() {
     <main className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionReveal>
-          <header className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#1E3A8A]">
-              Primary Conversion
-            </p>
+          <header className="page-intro-panel mx-auto max-w-5xl p-8 text-center sm:p-10 lg:p-12">
+            <p className="eyebrow-chip">Primary Conversion</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight text-[#111111] md:text-5xl">
               Book a Test Drive
             </h1>
@@ -34,7 +32,7 @@ export default function BookTestDrivePage() {
         </SectionReveal>
 
         <SectionReveal delay={100}>
-          <section className="mx-auto mt-14 max-w-6xl overflow-hidden rounded-[32px] border border-gray-200 bg-white shadow-sm">
+          <section className="surface-card mx-auto mt-14 max-w-6xl overflow-hidden rounded-[32px]">
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr]">
               <div className="p-8 sm:p-10 lg:p-12">
                 <h2 className="text-2xl font-bold text-[#111111]">

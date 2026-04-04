@@ -15,7 +15,7 @@ export function ModelCard({ name, description, imageSrc, imageAlt }: ModelCardPr
       <div className="image-frame relative aspect-[4/3] overflow-hidden rounded-[22px]">
         <Image
           alt={imageAlt}
-          className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+          className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.06]"
           fill
           sizes="(max-width: 1024px) 100vw, 33vw"
           src={imageSrc}

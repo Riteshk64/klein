@@ -15,9 +15,10 @@ export default function TechnologyPage() {
   return (
     <main className="bg-white">
       <SectionContainer>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        <div className="page-intro-panel grid grid-cols-1 items-center gap-12 p-8 sm:p-10 lg:grid-cols-2 lg:p-12">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 lg:text-5xl">
+            <p className="eyebrow-chip">Engineering Story</p>
+            <h1 className="mt-5 text-4xl font-bold text-gray-900 lg:text-5xl">
               Technology Built for Urban Mobility
             </h1>
             <p className="mt-4 max-w-xl text-lg text-gray-600">

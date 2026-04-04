@@ -15,8 +15,9 @@ export function FeaturesShowcase({ features }: FeaturesShowcaseProps) {
 
           return (
             <SectionReveal key={feature.title} delay={index * 100}>
-              <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+              <div className="feature-row grid grid-cols-1 items-center gap-12 p-8 sm:p-10 lg:grid-cols-2 lg:p-12">
                 <div className={isImageFirst ? "lg:order-2" : ""}>
+                  <p className="eyebrow-chip">Feature {String(index + 1).padStart(2, "0")}</p>
                   <h3 className="text-3xl font-bold text-gray-900">{feature.title}</h3>
                   <p className="mt-4 max-w-xl text-lg leading-8 text-gray-600">
                     {feature.description}
@@ -24,7 +25,7 @@ export function FeaturesShowcase({ features }: FeaturesShowcaseProps) {
                 </div>
 
                 <div className={isImageFirst ? "lg:order-1" : ""}>
-                  <div className="aspect-[16/10] overflow-hidden rounded-2xl">
+                  <div className="image-frame aspect-[16/10] overflow-hidden rounded-[26px]">
                     <ShowcaseImage
                       alt={feature.imageAlt}
                       fit="cover"

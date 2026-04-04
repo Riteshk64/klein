@@ -13,17 +13,17 @@ type ModelTabsProps = {
 
 export function ModelTabs({ tabs, activeModelId, onSelect }: ModelTabsProps) {
   return (
-    <div className="mb-10 flex gap-6 overflow-x-auto border-b border-gray-200">
+    <div className="tab-shell mb-12 flex gap-3 overflow-x-auto rounded-[24px] p-3">
       {tabs.map((tab) => {
         const isActive = tab.id === activeModelId;
 
         return (
           <button
             key={tab.id}
-            className={`cursor-pointer border-b-2 px-4 py-3 font-medium transition-colors ${
+            className={`cursor-pointer rounded-2xl px-5 py-3 font-medium transition-all ${
               isActive
-                ? "border-blue-600 text-[#1E3A8A]"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "bg-[#1E3A8A] text-white shadow-[0_20px_32px_-24px_rgba(30,58,138,1)]"
+                : "text-gray-600 hover:bg-[#1E3A8A]/6 hover:text-gray-900"
             }`}
             onClick={() => onSelect(tab.id)}
             type="button"

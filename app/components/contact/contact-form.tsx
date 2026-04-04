@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function ContactForm() {
   return (
-    <div>
+    <div className="surface-card rounded-[28px] p-8 sm:p-10">
       <form className="space-y-4">
         <div>
           <label className="mb-2 block text-sm font-medium text-gray-700" htmlFor="full-name">
