@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SectionReveal } from "../section-reveal";
 
 type SectionContainerProps = {
   children: ReactNode;
@@ -11,7 +12,9 @@ export function SectionContainer({
 }: SectionContainerProps) {
   return (
     <section className={`py-20 ${className}`}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">{children}</div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <SectionReveal>{children}</SectionReveal>
+      </div>
     </section>
   );
 }

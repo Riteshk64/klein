@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import type { ConfigModel, ConfigOption } from "../../configurator-content";
+import { SectionReveal } from "../section-reveal";
+import { ColorSelector } from "./color-selector";
 import { ConfiguratorSection } from "./configurator-section";
 import { ModelTabs } from "./model-tabs";
 import { PriceSummary } from "./price-summary";
@@ -59,7 +61,12 @@ export function ConfiguratorShowcase({ models }: ConfiguratorShowcaseProps) {
     const engineDelta = engineOption?.priceDelta ?? 0;
 
     return activePowertrain.basePrice + dashboardDelta + batteryDelta + engineDelta;
-  }, [activePowertrain.basePrice, batteryOption?.priceDelta, dashboardOption?.priceDelta, engineOption?.priceDelta]);
+  }, [
+    activePowertrain.basePrice,
+    batteryOption?.priceDelta,
+    dashboardOption?.priceDelta,
+    engineOption?.priceDelta,
+  ]);
 
   function handleModelChange(modelId: string) {
     const nextModel = models.find((model) => model.id === modelId);
@@ -87,7 +94,7 @@ export function ConfiguratorShowcase({ models }: ConfiguratorShowcaseProps) {
   }
 
   function optionMeta(option: ConfigOption) {
-    return option.priceDelta === 0 ? "Included" : `+₹${formatPrice(option.priceDelta)}`;
+    return option.priceDelta === 0 ? "Included" : `+\u20B9${formatPrice(option.priceDelta)}`;
   }
 
   return (
@@ -98,112 +105,114 @@ export function ConfiguratorShowcase({ models }: ConfiguratorShowcaseProps) {
         tabs={models.map((model) => ({ id: model.id, name: model.name }))}
       />
 
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <div>
-          <VehicleImage imageAlt={activeColor.imageAlt} imageSrc={activeColor.imageSrc} />
-        </div>
+      <SectionReveal>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div>
+            <VehicleImage imageAlt={activeColor.imageAlt} imageSrc={activeColor.imageSrc} />
+          </div>
 
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900">{activeModel.name}</h2>
-          <p className="mt-3 max-w-xl text-lg leading-8 text-gray-600">
-            {activeModel.description}
-          </p>
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900">{activeModel.name}</h2>
+            <p className="mt-3 max-w-xl text-lg leading-8 text-gray-600">
+              {activeModel.description}
+            </p>
 
-          <ConfiguratorSection label="Powertrain">
-            <RadioGroup
-              layout="row"
-              name={`${activeModel.id}-powertrain`}
-              onChange={handlePowertrainChange}
-              options={activeModel.powertrains.map((powertrain) => ({
-                id: powertrain.id,
-                label: powertrain.label,
-              }))}
-              selectedId={activePowertrain.id}
-            />
-          </ConfiguratorSection>
-
-          <ConfiguratorSection label="Color">
-            <RadioGroup
-              layout="row"
-              name={`${activeModel.id}-color`}
-              onChange={(colorId) =>
-                setSelection((current) => ({
-                  ...current,
-                  colorId,
-                }))
-              }
-              options={activeModel.colors.map((color) => ({
-                id: color.id,
-                label: color.label,
-              }))}
-              selectedId={activeColor.id}
-            />
-          </ConfiguratorSection>
-
-          <ConfiguratorSection label="Dashboard">
-            <RadioGroup
-              name={`${activeModel.id}-dashboard`}
-              onChange={(dashboardId) =>
-                setSelection((current) => ({
-                  ...current,
-                  dashboardId,
-                }))
-              }
-              options={activeModel.dashboardOptions.map((option) => ({
-                id: option.id,
-                label: option.label,
-                description: option.description,
-                meta: optionMeta(option),
-              }))}
-              selectedId={dashboardOption.id}
-            />
-          </ConfiguratorSection>
-
-          {activePowertrain.id === "EV" && activePowertrain.batteryOptions ? (
-            <ConfiguratorSection label="Battery">
+            <ConfiguratorSection label="Powertrain">
               <RadioGroup
-                name={`${activeModel.id}-battery`}
-                onChange={(batteryId) =>
+                layout="row"
+                name={`${activeModel.id}-powertrain`}
+                onChange={handlePowertrainChange}
+                options={activeModel.powertrains.map((powertrain) => ({
+                  id: powertrain.id,
+                  label: powertrain.label,
+                }))}
+                selectedId={activePowertrain.id}
+              />
+            </ConfiguratorSection>
+
+            <ConfiguratorSection label="Color">
+              <ColorSelector
+                name={`${activeModel.id}-color`}
+                onChange={(colorId) =>
                   setSelection((current) => ({
                     ...current,
-                    batteryId,
+                    colorId,
                   }))
                 }
-                options={activePowertrain.batteryOptions.map((option) => ({
+                options={activeModel.colors.map((color) => ({
+                  id: color.id,
+                  label: color.label,
+                  swatch: color.swatch,
+                }))}
+                selectedId={activeColor.id}
+              />
+            </ConfiguratorSection>
+
+            <ConfiguratorSection label="Dashboard">
+              <RadioGroup
+                name={`${activeModel.id}-dashboard`}
+                onChange={(dashboardId) =>
+                  setSelection((current) => ({
+                    ...current,
+                    dashboardId,
+                  }))
+                }
+                options={activeModel.dashboardOptions.map((option) => ({
                   id: option.id,
                   label: option.label,
                   description: option.description,
                   meta: optionMeta(option),
                 }))}
-                selectedId={batteryOption?.id ?? activePowertrain.batteryOptions[0].id}
+                selectedId={dashboardOption.id}
               />
             </ConfiguratorSection>
-          ) : null}
 
-          {activePowertrain.id === "ICE" && activePowertrain.engineOptions ? (
-            <ConfiguratorSection label="Engine">
-              <RadioGroup
-                name={`${activeModel.id}-engine`}
-                onChange={(engineId) =>
-                  setSelection((current) => ({
-                    ...current,
-                    engineId,
-                  }))
-                }
-                options={activePowertrain.engineOptions.map((option) => ({
-                  id: option.id,
-                  label: option.label,
-                  description: option.description,
-                  meta: optionMeta(option),
-                }))}
-                selectedId={engineOption?.id ?? activePowertrain.engineOptions[0].id}
-              />
-            </ConfiguratorSection>
-          ) : null}
+            {activePowertrain.id === "EV" && activePowertrain.batteryOptions ? (
+              <ConfiguratorSection label="Battery">
+                <RadioGroup
+                  name={`${activeModel.id}-battery`}
+                  onChange={(batteryId) =>
+                    setSelection((current) => ({
+                      ...current,
+                      batteryId,
+                    }))
+                  }
+                  options={activePowertrain.batteryOptions.map((option) => ({
+                    id: option.id,
+                    label: option.label,
+                    description: option.description,
+                    meta: optionMeta(option),
+                  }))}
+                  selectedId={batteryOption?.id ?? activePowertrain.batteryOptions[0].id}
+                />
+              </ConfiguratorSection>
+            ) : null}
 
-          <PriceSummary totalPrice={`₹${formatPrice(totalPrice)}`} />
+            {activePowertrain.id === "ICE" && activePowertrain.engineOptions ? (
+              <ConfiguratorSection label="Engine">
+                <RadioGroup
+                  name={`${activeModel.id}-engine`}
+                  onChange={(engineId) =>
+                    setSelection((current) => ({
+                      ...current,
+                      engineId,
+                    }))
+                  }
+                  options={activePowertrain.engineOptions.map((option) => ({
+                    id: option.id,
+                    label: option.label,
+                    description: option.description,
+                    meta: optionMeta(option),
+                  }))}
+                  selectedId={engineOption?.id ?? activePowertrain.engineOptions[0].id}
+                />
+              </ConfiguratorSection>
+            ) : null}
+
+            <PriceSummary totalPrice={`\u20B9${formatPrice(totalPrice)}`} />
+          </div>
         </div>
-      </div>
+      </SectionReveal>
     </>
   );
 }

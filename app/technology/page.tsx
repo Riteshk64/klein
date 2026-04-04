@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SectionReveal } from "../components/section-reveal";
 import { FeatureGrid } from "../components/technology/feature-grid";
 import { ImagePlaceholder } from "../components/technology/image-placeholder";
 import { SectionContainer } from "../components/technology/section-container";
@@ -186,15 +187,17 @@ export default function TechnologyPage() {
 
       <section className="bg-[#1E3A8A] py-20 text-white">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-10">
-          <h2 className="text-4xl font-bold">
-            Experience Technology Built for the City
-          </h2>
-          <Link
-            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold !text-[#1E3A8A] transition hover:bg-gray-100"
-            href="/build-and-pricing"
-          >
-            Build &amp; Price
-          </Link>
+          <SectionReveal>
+            <h2 className="text-4xl font-bold">
+              Experience Technology Built for the City
+            </h2>
+            <Link
+              className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold !text-[#1E3A8A] transition hover:bg-gray-100"
+              href="/build-and-pricing"
+            >
+              Build &amp; Price
+            </Link>
+          </SectionReveal>
         </div>
       </section>
     </main>

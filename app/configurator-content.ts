@@ -12,6 +12,7 @@ export type ConfigModel = {
   colors: {
     id: string;
     label: string;
+    swatch: string;
     imageSrc: string;
     imageAlt: string;
   }[];
@@ -34,18 +35,21 @@ export const configuratorModels: ConfigModel[] = [
       {
         id: "white",
         label: "White",
+        swatch: "#FFFFFF",
         imageSrc: "/images/pricing/pulse-white.png",
         imageAlt: "Klein Pulse in white",
       },
       {
         id: "grey",
         label: "Dark Grey",
+        swatch: "#4B5563",
         imageSrc: "/images/pricing/pulse-grey.png",
         imageAlt: "Klein Pulse in dark grey",
       },
       {
         id: "red",
         label: "Red",
+        swatch: "#B91C1C",
         imageSrc: "/images/pricing/pulse-red.jpg",
         imageAlt: "Klein Pulse in red",
       },
@@ -113,18 +117,21 @@ export const configuratorModels: ConfigModel[] = [
       {
         id: "white",
         label: "White",
+        swatch: "#FFFFFF",
         imageSrc: "/images/pricing/eon-white.png",
         imageAlt: "Klein Eon in white",
       },
       {
         id: "grey",
         label: "Dark Grey",
+        swatch: "#4B5563",
         imageSrc: "/images/pricing/eon-grey.jpg",
         imageAlt: "Klein Eon in dark grey",
       },
       {
         id: "red",
         label: "Red",
+        swatch: "#B91C1C",
         imageSrc: "/images/pricing/eon-red.jpg",
         imageAlt: "Klein Eon in red",
       },
@@ -192,18 +199,21 @@ export const configuratorModels: ConfigModel[] = [
       {
         id: "white",
         label: "White",
+        swatch: "#FFFFFF",
         imageSrc: "/images/pricing/volt-white.png",
         imageAlt: "Klein Volt in white",
       },
       {
         id: "grey",
         label: "Dark Grey",
+        swatch: "#4B5563",
         imageSrc: "/images/pricing/volt-grey.png",
         imageAlt: "Klein Volt in dark grey",
       },
       {
         id: "red",
         label: "Red",
+        swatch: "#B91C1C",
         imageSrc: "/images/pricing/volt-red.png",
         imageAlt: "Klein Volt in red",
       },

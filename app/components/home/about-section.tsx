@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SectionReveal } from "./section-reveal";
+import { SectionReveal } from "../section-reveal";
 
 export function AboutSection() {
   return (

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { SectionReveal } from "../section-reveal";
 import type { ShowcaseModel } from "../../models-content";
 import { FeaturesShowcase } from "./features-showcase";
 import { HighlightsGrid } from "./highlights-grid";
@@ -26,46 +27,50 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
         vehicles={models.map((model) => ({ id: model.id, name: model.name }))}
       />
 
-      <section className="min-h-[50vh] py-8">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
-          <div className="aspect-[16/9] overflow-hidden rounded-2xl">
-            <ShowcaseImage
-              alt={activeModel.heroImage.alt}
-              fit="cover"
-              src={activeModel.heroImage.src}
-            />
-          </div>
+      <SectionReveal>
+        <section className="min-h-[50vh] py-8">
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
+            <div className="aspect-[16/9] overflow-hidden rounded-2xl">
+              <ShowcaseImage
+                alt={activeModel.heroImage.alt}
+                fit="cover"
+                src={activeModel.heroImage.src}
+              />
+            </div>
 
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1E3A8A]">
-              {activeModel.name}
-            </p>
-            <h2 className="mt-4 text-4xl font-bold text-gray-900">{activeModel.tagline}</h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-gray-600">
-              {activeModel.description}
-            </p>
-            <Link
-              className="mt-8 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white transition hover:bg-[#1E40AF]"
-              href="/build-and-pricing"
-            >
-              Build & Price
-            </Link>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1E3A8A]">
+                {activeModel.name}
+              </p>
+              <h2 className="mt-4 text-4xl font-bold text-gray-900">{activeModel.tagline}</h2>
+              <p className="mt-5 max-w-xl text-lg leading-8 text-gray-600">
+                {activeModel.description}
+              </p>
+              <Link
+                className="mt-8 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white transition hover:bg-[#1E40AF]"
+                href="/build-and-pricing"
+              >
+                Build & Price
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </SectionReveal>
 
       <HighlightsGrid highlights={activeModel.highlights} />
       <FeaturesShowcase features={activeModel.features} />
 
-      <section className="py-20">
+      <section className="bg-[#1E3A8A] py-20 text-white">
         <div className="mx-auto max-w-[900px] px-6 text-center lg:px-10">
-          <h3 className="text-3xl font-bold text-gray-900">Ready to experience Klein?</h3>
-          <Link
-            className="mt-6 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white transition hover:bg-[#1E40AF]"
-            href="/build-and-pricing"
-          >
-            Build & Price
-          </Link>
+          <SectionReveal>
+            <h3 className="text-3xl font-bold text-white">Ready to experience Klein?</h3>
+            <Link
+              className="mt-6 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold !text-[#1E3A8A] transition hover:bg-gray-100"
+              href="/build-and-pricing"
+            >
+              Build & Price
+            </Link>
+          </SectionReveal>
         </div>
       </section>
     </>

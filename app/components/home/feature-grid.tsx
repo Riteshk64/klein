@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { SectionReveal } from "./section-reveal";
+import { SectionReveal } from "../section-reveal";
 
 type FeatureGridItem = {
   icon: ReactNode;

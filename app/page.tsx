@@ -15,7 +15,7 @@ import {
   SizeIcon,
 } from "./components/home/icons";
 import { ModelCard } from "./components/home/model-card";
-import { SectionReveal } from "./components/home/section-reveal";
+import { SectionReveal } from "./components/section-reveal";
 import {
   builtForCityFeatures,
   heroSlides,

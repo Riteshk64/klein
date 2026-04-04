@@ -39,9 +39,9 @@ export function ContactInfoCard() {
             Working Hours
           </p>
           <p className="mt-2 leading-7">
-            Monday – Saturday
+            Monday - Saturday
             <br />
-            9:00 AM – 6:00 PM
+            9:00 AM - 6:00 PM
           </p>
         </div>
       </div>
