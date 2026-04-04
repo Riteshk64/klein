@@ -22,7 +22,7 @@ export function ModelTabs({ tabs, activeModelId, onSelect }: ModelTabsProps) {
             key={tab.id}
             className={`cursor-pointer border-b-2 px-4 py-3 font-medium transition-colors ${
               isActive
-                ? "border-blue-600 text-blue-600"
+                ? "border-blue-600 text-[#1E3A8A]"
                 : "border-transparent text-gray-600 hover:text-gray-900"
             }`}
             onClick={() => onSelect(tab.id)}

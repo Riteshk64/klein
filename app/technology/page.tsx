@@ -184,13 +184,13 @@ export default function TechnologyPage() {
         </div>
       </SectionContainer>
 
-      <section className="bg-blue-600 py-20 text-white">
+      <section className="bg-[#1E3A8A] py-20 text-white">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-10">
           <h2 className="text-4xl font-bold">
             Experience Technology Built for the City
           </h2>
           <Link
-            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold !text-blue-600 transition hover:bg-gray-100"
+            className="mt-8 inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold !text-[#1E3A8A] transition hover:bg-gray-100"
             href="/build-and-pricing"
           >
             Build &amp; Price

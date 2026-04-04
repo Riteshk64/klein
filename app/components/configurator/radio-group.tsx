@@ -40,7 +40,7 @@ export function RadioGroup({
           >
             <input
               checked={isActive}
-              className="mt-1 h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-600"
+              className="mt-1 h-4 w-4 border-gray-300 text-[#1E3A8A] focus:ring-blue-600"
               name={name}
               onChange={() => onChange(option.id)}
               type="radio"

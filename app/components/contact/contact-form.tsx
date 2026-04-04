@@ -70,7 +70,7 @@ export function ContactForm() {
         </div>
 
         <button
-          className="inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+          className="inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold text-white transition hover:bg-[#1E40AF]"
           type="submit"
         >
           Send Message
@@ -79,7 +79,7 @@ export function ContactForm() {
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row">
         <Link
-          className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 font-semibold !text-white transition hover:bg-blue-700"
+          className="inline-flex items-center justify-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white transition hover:bg-[#1E40AF]"
           href="/book-test-drive"
         >
           Book Test Drive

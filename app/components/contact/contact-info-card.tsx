@@ -27,7 +27,7 @@ export function ContactInfoCard() {
             Email
           </p>
           <a
-            className="mt-2 inline-block leading-7 text-blue-600 hover:text-blue-700"
+            className="mt-2 inline-block leading-7 text-[#1E3A8A] hover:text-blue-700"
             href="mailto:info@kleinmotors.com"
           >
             info@kleinmotors.com

@@ -37,7 +37,7 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1E3A8A]">
               {activeModel.name}
             </p>
             <h2 className="mt-4 text-4xl font-bold text-gray-900">{activeModel.tagline}</h2>
@@ -45,7 +45,7 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
               {activeModel.description}
             </p>
             <Link
-              className="mt-8 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold !text-white transition hover:bg-blue-700"
+              className="mt-8 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white transition hover:bg-[#1E40AF]"
               href="/build-and-pricing"
             >
               Build & Price
@@ -57,11 +57,11 @@ export function ModelsShowcase({ models }: ModelsShowcaseProps) {
       <HighlightsGrid highlights={activeModel.highlights} />
       <FeaturesShowcase features={activeModel.features} />
 
-      <section className="py-16">
-        <div className="rounded-3xl bg-gray-50 px-8 py-12 text-center">
+      <section className="py-20">
+        <div className="mx-auto max-w-[900px] px-6 text-center lg:px-10">
           <h3 className="text-3xl font-bold text-gray-900">Ready to experience Klein?</h3>
           <Link
-            className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-semibold !text-white transition hover:bg-blue-700"
+            className="mt-6 inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 font-semibold !text-white transition hover:bg-[#1E40AF]"
             href="/build-and-pricing"
           >
             Build & Price

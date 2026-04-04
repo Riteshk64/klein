@@ -87,7 +87,7 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Link
-            className="inline-flex items-center rounded-lg bg-[#1E3A8A] px-6 py-3 text-sm font-semibold !text-white transition-all duration-200 hover:bg-[#1E40AF]"
+            className="inline-flex items-center rounded-lg bg-[#1E3A8A] bg-[#1E3A8A] px-6 py-3 text-sm font-semibold !text-white transition-all duration-200 hover:bg-[#1E40AF]"
             href={bookDriveItem.href}
           >
             {bookDriveItem.label}
